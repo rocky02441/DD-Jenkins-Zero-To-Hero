@@ -64,8 +64,8 @@
     <build>
 
         <finalName>spring-boot-web</finalName>
-
-         <plugin>
+         <plugins>
+                  <plugin>
          	<groupId>org.jacoco</groupId>
          	<artifactId>jacoco-maven-plugin</artifactId>
          	<version>${jacoco.version}</version>
@@ -73,12 +73,12 @@
          			<execution>
          				<id>jacoco-initialize</id>
          				<goals>
-         <goal>prepare-agent</goal>
-         </goals>
-         			</execution>
-         	</executions>
-         </plugin>
-         <plugin>
+                  <goal>prepare-agent</goal>
+                  </goals>
+                  			</execution>
+                  	</executions>
+                  </plugin>
+                  <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
