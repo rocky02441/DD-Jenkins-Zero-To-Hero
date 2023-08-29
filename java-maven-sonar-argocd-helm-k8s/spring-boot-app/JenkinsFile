@@ -21,8 +21,7 @@ pipeline {
     }
 stage('Sonar Analysis') {
             steps {
-                sh "cd java-maven-sonar-argocd-helm-k8s/spring-boot-app"
-                sh ''' mvn sonar:sonar -Dsonar.url=http://0.0.0.0:9000/ -Dsonar.login=dc23f28682388a19a84ce8dafa30afddb94895b7 -Dsonar.projectName=Petclinic '''
+                sh '''cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn sonar:sonar -Dsonar.url=http://0.0.0.0:9000/ -Dsonar.login=dc23f28682388a19a84ce8dafa30afddb94895b7 -Dsonar.projectName=Petclinic '''
             }
         }
     stage('Static Code Analysis') {
