@@ -21,7 +21,7 @@ pipeline {
     }
 stage('Sonar Analysis') {
             steps {
-                sh 'curl http://host.docker.internal:9000/'
+                sh 'hostip=$(ip route show | awk '/default/ {print $3}') && echo $hostip curl http://$hostip:9000/'
                 sh '''cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn sonar:sonar -Dsonar.url=http://host.docker.internal:9000/ -Dsonar.login=dc23f28682388a19a84ce8dafa30afddb94895b7 -Dsonar.projectName=Petclinic '''
             }
         }
